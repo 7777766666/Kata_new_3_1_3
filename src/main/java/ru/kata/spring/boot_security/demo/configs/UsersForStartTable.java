@@ -29,10 +29,10 @@ public class UsersForStartTable implements ApplicationRunner {
         User admin1 = new User("Tom", "Jerry","admin@Gmail.com", "admin",
                 "$2a$12$bKIKWE2BjIX9fbQ9yKAfAuKXmVzcOAvzrABADzuGx8i0RQNuZ2ZlC",
                 Collections.singletonList(role_admin));
-        User admin2 = new User( "Ivan", "Petrov", "admin@gmail.com", "admin",
-                "$2a$12$e2kPm6WGFJXq.0.aOFcYw.2g2Rd4NUNeDvZ5lwEaZEexjHUGukI7a");
-        User user2 = new User("Bob", "Ivanovich", "bob@gmail.com", "user",
-                "$2a$12$/Lsd2el1B0V7kuMXO8iLxeRaBom6KI97oc.qHW81/nZVH5ua2I6Hm");
+        User admin2 = new User( "Ivan", "Petrov", "admin@gmail.com", "a",
+                "$2a$12$e2kPm6WGFJXq.0.aOFcYw.2g2Rd4NUNeDvZ5lwEaZEexjHUGukI7a", Collections.singletonList(role_admin));
+        User user2 = new User("Bob", "Ivanovich", "bob@gmail.com", "u",
+                "$2a$12$/Lsd2el1B0V7kuMXO8iLxeRaBom6KI97oc.qHW81/nZVH5ua2I6Hm", Collections.singletonList(role_user));
 
 
         entityManager.persist(admin1);
