@@ -16,16 +16,16 @@ public class User {
 
 
     @NotNull
-    @Column(name = "email")
-    private String email;
-
-    @NotNull
     @Column(name = "name")
     private String name;
 
     @NotNull
     @Column(name = "lastname")
     private String lastname;
+
+    @NotNull
+    @Column(name = "email")
+    private String email;
 
     @NotNull
     @Column(name = "username")
@@ -40,6 +40,39 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
+
+    public User() {
+
+    }
+    public User(Integer id, String name, String lastname, String email) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+    }
+
+    public User(String username, String password, Collection<Role> roles) {
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User( String name, String lastname, String email, String username, String password, Collection<Role> roles) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(String name, String lastname, String email, String username, String password) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
     public int getId() {
         return id;
@@ -97,28 +130,5 @@ public class User {
         this.roles = roles;
     }
 
-    public User() {
 
-    }
-    public User(Integer id, String name, String lastname, String email) {
-        this.id = id;
-        this.name = name;
-        this.lastname = lastname;
-        this.email = email;
-    }
-
-    public User(String username, String password, Collection<Role> roles) {
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-    }
-
-    public User(String email, String name, String lastname, String username, String password, Collection<Role> roles) {
-        this.email = email;
-        this.name = name;
-        this.lastname = lastname;
-        this.username = username;
-        this.password = password;
-        this.roles = roles;
-    }
 }
